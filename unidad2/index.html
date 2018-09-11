@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>actividad uno </title>
+</head>
+<body>
+        <form id="f"> <!-- Formulario para introducir coordenadas y color del pixel -->
+            <!-- x<input name="x" type="text" size="2" value=10  /> Campo texto para la abscisa -->
+            <!-- y<input name="y" type="text" size="2" value=10 /> Campo texto para la ordenada --> -->
+            color<input name="c" type="color" value='#FFF000'/> <!-- Indicar el color del punto -->
+            <input type="range" name="rangoo" id="radio" value=100 max=500 min=10>
+            <input type="number" name="radio" id="valorR" readonly value=100>
+            <!-- Botón para llamar a la función que muestra el punto -->
+            <!-- <input type="button" value="pintar" id='dibujar' /> -->
+            </form>
+    <canvas id='miCanvas' width="400" height="400"></canvas>
+    <script src="js/circulos.js"></script>
+</body>
+</html>
