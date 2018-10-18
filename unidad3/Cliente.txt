@@ -1,0 +1,191 @@
+package Libro;
+ import java.io.*;
+ import java.net.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+  import javax.swing.*;
+ 
+public class Cliente1 extends JFrame  {
+    private JTextField campoIntroducir; // introduce la información del usuario
+    private JTextArea areaPantalla; // muestra la información al usuario
+    private ObjectOutputStream salida; // flujo de salida hacia el servidor
+    private ObjectInputStream entrada; // flujo de entrada del servidor
+    private String mensaje = ""; // mensaje del servidor
+    private String servidorChat; // aloja al servidor para esta aplicación
+    private Socket cliente; // socket para comunicarse con el servidor
+ public Cliente1 ( String host )
+  {
+  super( "Cliente1" );
+ 
+  servidorChat = host; // establece el servidor al que se conecta este cliente
+
+  campoIntroducir = new JTextField(); // crea objeto campoIntroducir
+ campoIntroducir.setEditable( false );
+  campoIntroducir.addActionListener(
+          new ActionListener()
+  {
+  // envía el mensaje al servidor
+ public void actionPerformed( ActionEvent evento )
+  {
+  enviarDatos( evento.getActionCommand() );
+  campoIntroducir.setText( "" );
+  } // fin del método actionPerformed
+} // fin de la clase interna anónima
+ ); // fin de la llamada a addActionListener
+
+  add( campoIntroducir, BorderLayout.NORTH );
+ 
+  areaPantalla = new JTextArea(); // crea objeto areaPantalla
+ add( new JScrollPane( areaPantalla ), BorderLayout.CENTER );
+ 
+    setSize( 300, 150 ); // establece el tamaño de la ventana
+   setVisible( true ); // muestra la ventana
+ } // fin del constructor de Cliente
+public void ejecutarCliente()
+  {
+  try // se conecta al servidor, obtiene flujos, procesa la conexión
+ {
+  conectarAlServidor(); // crea un objeto Socket para hacer la conexión
+  obtenerFlujos(); // obtiene los flujos de entrada y salida
+  procesarConexion(); // procesa la conexión
+ } // fin de try
+ catch ( EOFException excepcionEOF )
+  {
+  mostrarMensaje( "\nCliente termino la conexion" );
+  } // fin de catch
+ catch ( IOException excepcionES )
+  {
+  excepcionES.printStackTrace();
+  } // fin de catch
+ finally
+  {
+  cerrarConexion(); // cierra la conexión
+ } // fin de finally
+ } // fin del método ejecutarCliente
+// se conecta al servidor
+ private void conectarAlServidor() throws IOException
+ {
+  mostrarMensaje( "Intentando realizar conexion\n" );
+ 
+  // crea objeto Socket para hacer conexión con el servidor
+ cliente = new Socket( InetAddress.getByName( "localhost" ), 3033 );
+ 
+  // muestra la información de la conexión
+ mostrarMensaje( "Conectado a: " +
+  cliente.getInetAddress().getHostName() );
+  } // fin del método conectarAlServidor
+
+// obtiene flujos para enviar y recibir datos
+ private void obtenerFlujos() throws IOException
+  {
+  // establece flujo de salida para los objetos
+ salida = new ObjectOutputStream( cliente.getOutputStream() );
+  salida.flush(); // vacía el búfer de salida para enviar información de encabezado
+
+  // establece flujo de entrada para los objetos
+ entrada = new ObjectInputStream( cliente.getInputStream() );
+ 
+  mostrarMensaje( "\nSe obtuvieron los flujos de E/S\n" );
+  } // fin del método obtenerFlujos
+
+  // procesa la conexión con el servidor
+ private void procesarConexion() throws IOException
+  {
+  // habilita campoIntroducir para que el usuario cliente pueda enviar mensajes
+ establecerCampoEditable( true );
+ 
+  do // procesa los mensajes que se envían desde el servidor
+ {
+  try // lee el mensaje y lo muestra
+ {
+  mensaje = ( String ) entrada.readObject(); // lee nuevo mensaje
+ mostrarMensaje( "\n" + mensaje ); // muestra el mensaje
+ } // fin de try
+ catch ( ClassNotFoundException excepcionClaseNoEncontrada ) 
+
+ {
+mostrarMensaje( "nSe recibio un tipo de objeto desconocido" );
+  } // fin de catch
+
+  } while ( !mensaje.equals( "SERVIDOR>>> TERMINAR" ) );
+  } // fin del método procesarConexion
+ 
+// cierra flujos y socket
+ private void cerrarConexion()
+ {
+  mostrarMensaje( "\nCerrando conexion" );
+ establecerCampoEditable( false ); // deshabilita campoIntroducir
+
+  try
+  {
+  salida.close(); // cierra el flujo de salida
+ entrada.close(); // cierra el flujo de entrada 1
+ cliente.close(); // cierra el socket
+ } // fin de try
+ catch ( IOException excepcionES )
+  {
+  excepcionES.printStackTrace();
+  } // fin de catch
+ } // fin del método cerrarConexion
+// envía un mensaje al servidor
+ private void enviarDatos( String mensaje )
+  {
+  try // envía un objeto al servidor
+{
+  salida.writeObject( "CLIENTE>>> " + mensaje );
+  salida.flush(); // envía todos los datos a la salida
+ mostrarMensaje( "\nCLIENTE>>> " + mensaje );
+  } // fin de try
+ catch ( IOException excepcionES )
+  {
+  areaPantalla.append( "\nError al escribir objeto" );
+  } // fin de catch
+ } // fin del método enviarDatos
+
+ // manipula el objeto areaPantalla en el subproceso despachador de eventos
+  private void mostrarMensaje( final String mensajeAMostrar )
+  {
+  SwingUtilities.invokeLater(
+  new Runnable()
+  {
+  public void run() // actualiza objeto areaPantalla
+ {
+  areaPantalla.append( mensajeAMostrar );
+  } // fin del método run
+ } // fin de la clase interna anónima
+ ); // fin de la llamada a SwingUtilities.invokeLater
+ } // fin del método mostrarMensaje
+// manipula a campoIntroducir en el subproceso despachador de eventos
+ private void establecerCampoEditable( final boolean editable )
+  {
+  SwingUtilities.invokeLater( new Runnable()
+          
+  {         
+public void run() // establece la propiedad de edición de campoIntroducir
+ {
+  campoIntroducir.setEditable( editable );
+  } // fin del método run
+ } // fin de la clase interna anónima
+ ); // fin de la llamada a SwingUtilities.invokeLater
+ } // fin del método establecerCampoEditable
+
+public static void main( String args[] )
+  {
+  Cliente1 aplicacion; // declara la aplicación cliente
+
+  // si no hay argumentos de línea de comandos
+ if ( args.length == 0 )
+  aplicacion = new Cliente1( "localhost" ); // se conecta a localhost
+ else
+  aplicacion = new Cliente1( args[ 0 ] ); // usa args para conectarse
+
+  aplicacion.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+  aplicacion.ejecutarCliente(); // ejecuta la aplicación cliente
+ } 
+
+}
+
+
+
+
