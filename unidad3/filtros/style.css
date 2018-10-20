@@ -17,7 +17,11 @@ html {
   margin: 2rem auto;
   border-radius:2px;
 }
-
+#tomar{
+position:fixed;
+top:0;
+left:50%;
+}
 /*clearfix*/
 .photobooth:after {
   content: '';

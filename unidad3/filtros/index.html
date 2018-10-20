@@ -3,37 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <title>Filtros aplicados</title>
+  <link rel="stylesheet" href="bs/bootstrap.min.css">
+  <script src="bs/jquery-3.3.1.slim.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<script src="bs/popper.min.js"></script>
+<script src="bs/bootstrap.min.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="photobooth">
+  
     <div class="controls">
-      <button onClick="takePhoto()">Tomar foto</button>
-      <div class="rgb">
-        <label for="rmin">Rojo Min:</label>
-        <input type="range" min=0 max=255 name="rmin">
-        <label for="rmax">Rojo Max:</label>
-        <input type="range" min=0 max=255 name="rmax">
-
-        <br>
-
-        <label for="gmin">Verde Min:</label>
-        <input type="range" min=0 max=255 name="gmin">
-        <label for="gmax">Verde Max:</label>
-        <input type="range" min=0 max=255 name="gmax">
-
-        <br>
-
-        <label for="bmin">Azul Min:</label>
-        <input type="range" min=0 max=255 name="bmin">
-        <label for="bmax">Azul Max:</label>
-        <input type="range" min=0 max=255 name="bmax">
-      </div>
+      <button onClick="takePhoto()" id="tomar"><i class="fas fa-camera  " aria-hidden="true"></i></button>
+      <div> <button id="filtroBrillo" class="btn btn-primary" data-toggle="collapse" href="#brilloC" role="button" aria-expanded="false" aria-controls="brilloC">
+          Brillo
+      </button>
+        <button id="filtroEscalaGrises" class="btn btn-secondary" role="button">
+          Escala de grises
+        </button>
+        <button id="filtroRGB" class="btn btn-success" role="button">
+          Descomposion RGB 
+        </button>
+        <button id="blancoNegro" class="btn btn-dark" role="button">
+          Blanco y negro
+        </button>
+        <button id="filtroRojo" class="btn btn-danger" role="button">
+          Imagen roja
+        </button></div>
+        <div class="collapse" id="brilloC">
+            <div class="card card-body">
+             <input type="range" name="brillo" id="brillo" value="100" min="0" max="255" step="1">
+            </div>
+          </div>   
     </div>
 
     <canvas class="photo"></canvas>
-    <video class="player"></video>
+    <!-- <video class="player"></video> -->
     <div class="strip"></div>
   </div>
 
