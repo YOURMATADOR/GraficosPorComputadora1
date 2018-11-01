@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-theme: jekyll-theme-dinky
-title: [Graficos por computadora 1]
-description: [El codigo mostrado puede ser modificado y utilizado de manera libre]
-=======
 theme: jekyll-theme-midnight
-title: [The title of your site]
-description: [A short description of your site's purpose]
->>>>>>> 58922019ec03a0e0e62dc800aecd9e4a7e1571c5
+title: [Graficos por computador 1]
+description: [El codigo mostrado puede ser modificado de manera libre]
+show_downloads: true

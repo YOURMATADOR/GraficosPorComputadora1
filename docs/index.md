@@ -17,7 +17,7 @@ layout: default
 
 # Cilindrico
 
-![ejemplo](public/img/a13.png)
+![ejemplo](/docs/public/img/a13.png)
 > Se utiliza en la resolucion de problemas que tienen incluidas las simetrias de tipo cilindro o [acimutal](https://es.wikipedia.org/wiki/Proyecci%C3%B3n_acimutal), es una convinacion de coordenadas polares de la geometria analitaca plana, pero esta en **3** dimensiones.
 
 un punto ${p}$ se representa por ($\rho, φ, z$)
@@ -113,8 +113,3 @@ Donde d es la dimensión del espacio donde se define el sistema de coordenadas l
 
 
 ## Unidad 2
-Column A | Column B | Column C
----------|----------|---------
- A1 | B1 | C1
- A2 | B2 | C2
- A3 | B3 | C3
