@@ -105,7 +105,7 @@ function brillo(){
   mConv[0] = new Array (0, 0, 0); 
   mConv[1] = new Array (0, 2, 0); 
   mConv[2] = new Array (0, 0, 0);
-  divisor = 1;
-  bias = 0;
+  divisor = +document.getElementById('divisor').value;
+  bias = +document.getElementById('bias').value;
   procesar();
 }

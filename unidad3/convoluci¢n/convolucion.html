@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <title>Convolución</title>
-    
-  </head>
-  <body>
-    <canvas width='200' height='200' id='canvas'></canvas>
-    <p><input type='file' id='cargar'></p>
+<head>
+  <link rel="stylesheet" href="css/main.css">
+  <title>Convoluciï¿½n</title>
 
-    <p><input type="button" value="procesar" onclick="brillo()" /></p>
-    
+</head>
+
+<body>
+  <div id="presentacion">
+    <canvas width='200' height='200' id='canvas'></canvas>
     <canvas width='200' height='200' id='canvas2'></canvas>
-    <script src="convolucion.js"></script>
-  </body>
+  </div>
+  <div id="controles">
+    <div id="controlesI">
+    <p><input type='file' id='cargar'></p>
+    <p><input type="button" value="procesar" onclick="brillo()" /></p>
+  </div>
+  <div id="controlesD">
+    <label for="bias">Bias</label>
+    <input type="number" name="" id="bias" value="0">
+    <label for="divisor">Divisor</label>
+    <input type="number" name="" id="divisor" value="1">
+  </div>
+  </div>
+  <script src="convolucion.js"></script>
+
+</body>
 
 </html>

@@ -1,0 +1,40 @@
+body{
+    margin: 0px;
+}
+
+#presentacion{
+    
+    width: 100%;
+    
+    display: flex;
+}
+#canvas{
+    flex: 1 1 50%;
+    
+    height: 90vh;
+}
+#canvas2{
+    flex:1 1 50%;
+    height: 90vh;
+    
+}
+
+#controles{
+    
+    width: 100%;
+    display: flex;
+}
+
+#controlesI{
+    flex:1;
+    
+display: flex;
+justify-content: space-around;
+    
+}
+#controlesD{
+    flex:1;
+    
+    
+}
+
