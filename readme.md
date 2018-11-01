@@ -8,7 +8,7 @@
 
 # Cilindrico
 
-![ejemplo](https://0c16d2e5-a-62cb3a1a-s-sites.googlegroups.com/site/calculovectorialhakim/coordenadas-cilindricas-y-esfericas/a13.png?attachauth=ANoY7cqBXhkxPA3jqQBOa2O6WGlU1ilkpJbve0qWOVbNnzISMwk3eMHSCrJddU7vCZIBiC09o0DJ0EYmXZtgoCQHA6QrtmwumI4j1BjPGykyl1CzTr7XNSo44su95ZF2cW1G_WQ6cEuLIMoY2UgaM4lUUtlRXB0UnO1rDO63vZeACnGy-O00Cp4FPvrDIX9umw-1ehm20oO6rD7OAVecja9wErOArrZFKXxTdPAE3q5rLFCNsVluDBy9k8ulyWFCG64k0QR4RKrg5QACKIlVZqNUCxn49LDtdg%3D%3D&attredirects=0)
+![ejemplo](/public/img/a13.png)
 > Se utiliza en la resolucion de problemas que tienen incluidas las simetrias de tipo cilindro o [acimutal](https://es.wikipedia.org/wiki/Proyecci%C3%B3n_acimutal), es una convinacion de coordenadas polares de la geometria analitaca plana, pero esta en **3** dimensiones.
 
 un punto ${p}$ se representa por ($\rho, φ, z$)
