@@ -2,22 +2,22 @@
 layout: default
 ---
 
-# Actividades
+  _Jesus Eduardo Avila Mancilla_
+
+# Unidad 1
+
+-----
+## Sistemas de coordenadas :tada:
 
 
-## Unidad #1
-
-# Sistemas de coordenadas :tada:
-
-#### _Jesus Eduardo Avila Mancilla_
 
 
----
 
 
-# Cilindrico
 
-![ejemplo](/docs/public/img/a13.png)
+### Cilindrico
+
+![ejemplo](https://raw.githubusercontent.com/YOURMATADOR/GraficosPorComputadora1/master/docs/public/img/a13.png)
 > Se utiliza en la resolucion de problemas que tienen incluidas las simetrias de tipo cilindro o [acimutal](https://es.wikipedia.org/wiki/Proyecci%C3%B3n_acimutal), es una convinacion de coordenadas polares de la geometria analitaca plana, pero esta en **3** dimensiones.
 
 un punto ${p}$ se representa por ($\rho, φ, z$)
@@ -35,7 +35,7 @@ los Rangos de variacion entre las tres coordenadas son
 
 
 ## convertir medidas cartesianas a polares
-![conversion1](https://sites.google.com/site/calculovectorialhakim/coordenadas-cilindricas-y-esfericas/a15.png?attredirects=0)
+![conversion1](https://raw.githubusercontent.com/YOURMATADOR/GraficosPorComputadora1/master/docs/public/img/a15.png)
 
 ## convertir medidas polares a cartesianas
 
@@ -111,5 +111,22 @@ Donde d es la dimensión del espacio donde se define el sistema de coordenadas l
 
 ![alt](https://wikimedia.org/api/rest_v1/media/math/render/svg/e0487f38ecc9f8c89da56a9758026eced8e89987)
 
+---
 
-## Unidad 2
+# Unidad 2
+---
+## Tranformaciones
+
+_Descripcion del problema_
+
+```
+Ejercicio: Diseñe la inicial de su nombre en un
+plano cartesiano. Escale su figura al doble de
+tamaño. Mueva la figura resultante dos
+unidades a la derecha y dos hacia arriba. Rote
+la figura resultante 30 grados antihorario
+tomando como centro de rotación el origen.
+```
+[Tranformaciones](/unidad2/transformaciones.html)
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>

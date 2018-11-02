@@ -2,3 +2,7 @@ theme: jekyll-theme-midnight
 title: [Graficos por computador 1]
 description: [El codigo mostrado puede ser modificado de manera libre]
 show_downloads: true
+plugins:
+  - jemoji
+markdown: kramdown
+
