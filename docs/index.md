@@ -117,7 +117,7 @@ Donde d es la dimensión del espacio donde se define el sistema de coordenadas l
 ---
 ## Tranformaciones
 
-_Descripcion del problema_
+_Descripcion del problema_ :pencil2:
 
 ```
 Ejercicio: Diseñe la inicial de su nombre en un
@@ -128,5 +128,143 @@ la figura resultante 30 grados antihorario
 tomando como centro de rotación el origen.
 ```
 [Tranformaciones](/unidad2/transformaciones.html)
+
+---
+## Circulos
+
+_Descripcion del problema_ :pencil2:
+
+```
+implementa el algoritmo del punto medio para
+círculos. 
+Muestra círculos de 100 pixeles de diámetro tomando
+como centro el clic del ratón. 
+Modifique los archivos circulo.html
+y circulo.html para incorporar un selector utilizado por el usuario
+para indicar el color del círculo. 
+Agregue también una caja de
+texto donde pueda especificar el radio del mismo.
+```
+[Circulos](/unidad2/circulos.html)
+
+---
+
+## Colores Random
+
+_Descripcion del problema_ :pencil2:
+
+```
+El ejemplo 4 muestra 1000 pixeles en colores y posiciones al azar
+dentro del lienzo de dibujo. Recordemos que en los ejemplos se
+utiliza un lienzo de 400x400 pixeles. Modifique los archivos
+pixeles.html y pixeles.js para que todos los pixeles del lienzo se
+iluminen con un color al azar.
+```
+[Colores](/unidad2/colores.html)
+
+---
+## Dibujar 
+
+_Descripcion del problema_ :pencil2:
+
+```
+El ejemplo 3, permite graficar puntos al hacer clic con el ratón.
+Todos los puntos graficados aparecen en color azul. Modifique los
+archivos pixelclic.html y pixelclic.js para que se permita
+especificar al usuario el color del punto a graficar. No incluya un
+botón, sólo el selector con la paleta de colores html.
+```
+[Dibujar](/unidad2/dibujo.html)
+
+---
+## Dibujar Linea 
+
+_Descripcion del problema_ :pencil2:
+
+```
+El ejemplo 5 permite al usuario dibujar una línea recta basados en
+la ecuación de la recta especificando los puntos de inicio y fin de
+la línea mediante un par de clics del ratón. El ejemplo requiere
+que el punto inicial de la línea este más a la izquierda que el
+punto final, ya que es solo un algoritmo demostrativo. Modifique
+los archivos lineaec.html y lineaec.js para que grafique líneas sin
+importar dónde estén ubicados los puntos que la definen. Para
+este ejemplo, basta con intercambiar los puntos inicial y final
+dentro de la función lineaEcuacionRecta() si el inicial está a la
+derecha del final. Lo anterior, antes de iniciar con el cálculo de los
+puntos medios.
+```
+[Linea colores](/unidad2/lineaColores.html)
+
+---
+## Practica 1 | modos de color (imprimir UDG)
+
+_Descripcion del problema_ :pencil2:
+
+```
+Una imagen monocromática está representada por una estructura de datos organizada de la
+siguiente manera: 1 byte para la anchura, 1 byte para la altura y el resto de la información
+representa la imagen 1 bit por pixel. (0=negro, 1 = blanco). Considerando lo anterior, dibuje la
+imagen que resulta de procesar la siguiente información:
+0001100000000100101001001001100011000100101001101001000010100100101001011001
+100010100100010001001001110011000111
+```
+[# 1](/colores/num1.html)
+
+---
+## Practica 2 | modos de color (Matris)
+
+_Descripcion del problema_ :pencil2:
+
+```
+Escriba la información hexadecimal de un archivo que permita almacenar la siguiente imagen
+en escala de grises:
+```
+
+![ejemplo](https://raw.githubusercontent.com/YOURMATADOR/GraficosPorComputadora1/master/docs/public/img/matris.png)
+
+```
+Considere los siguientes valores hexadecimales para cada color en la imagen:
+000000 = negro
+C0C0C0 = gris claro
+858585 = gris obscuro
+El archivo deberá formarse de la siguiente manera:
+```
+![ejemplo](https://raw.githubusercontent.com/YOURMATADOR/GraficosPorComputadora1/master/docs/public/img/a13.png)
+[# 2](/colores/num2.html)
+
+---
+## Practica 3 | modos de color (mario)
+
+_Descripcion del problema_ :pencil2:
+
+```
+Considere la siguiente información utilizada para representar una paleta de 16 colores RGB.
+Suponga que deseamos almacenar la imagen de mario (18 X 14 pixeles) en un archivo en
+modo de color indexado utilizando la paleta siguiente: (use valores hexadecimales)
+```
+
+![ejemplo](https://raw.githubusercontent.com/YOURMATADOR/GraficosPorComputadora1/master/docs/public/img/mario.png)
+[UDG](/unidad2/arreglo.html)
+(/colores/num3.html)
+
+---
+
+## Practica 4 | mario a RGB
+
+_Descripcion del problema_ :pencil2:
+
+```
+Cuál sería el contenido del archivo (solo la información de los pixeles) si se desea almacenar
+utilizando un formato de color real, por ejemplo, RGB?
+```
+Respuesta 
+```
+var mario = "FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FF0000 FF0000 FF0000 FF0000 FF0000 FFFFFF FFFFFF FF00FF FF00FF FF00FF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FF0000 FF0000 FF0000 FF0000 FF0000 FF0000 FF0000 FF0000 FF0000 FF00FF FF00FF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF 800000 800000 800000 FF00FF FF00FF 000000 FF00FF FFFFFF FF0000 FF0000 FF0000 FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF 800000 FF00FF 800000 FF00FF FF00FF FF00FF 000000 FF00FF FF00FF FF00FF FF0000 FF0000 FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF 800000 FF00FF 800000 800000 FF00FF FF00FF FF00FF 000000 FF00FF FF00FF FF00FF FF0000 FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF 800000 800000 FF00FF FF00FF FF00FF FF00FF 000000 000000 000000 000000 FF0000 FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FF00FF FF00FF FF00FF FF00FF FF00FF FF00FF FF00FF FF0000 FF0000 FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FF0000 FF0000 FF0000 FF0000 FF0000 0000FF FF0000 FF0000 FF0000 0000FF FF0000 FF0000 FFFFFF FFFFFF FFFFFF 800000 FF00FF FF00FF FF0000 FF0000 FF0000 FF0000 FF0000 FF0000 0000FF FF0000 FF0000 FF0000 0000FF FFFFFF FFFFFF FFFFFF 800000 800000 FF00FF FF00FF FF00FF FF0000 FF0000 FF0000 FF0000 FF0000 0000FF 0000FF 0000FF 0000FF FFFF00 0000FF 0000FF 0000FF 800000 800000 FFFFFF FF00FF FFFFFF FFFFFF FFFFFF 0000FF FF0000 0000FF 0000FF FFFF00 0000FF 0000FF 0000FF 0000FF 0000FF 0000FF 800000 800000 FFFFFF FFFFFF FFFFFF 800000 800000 800000 0000FF 0000FF 0000FF 0000FF 0000FF 0000FF 0000FF 0000FF 0000FF 0000FF 800000 800000 FFFFFF FFFFFF 800000 800000 800000 0000FF 0000FF 0000FF 0000FF 0000FF 0000FF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF 800000 800000 FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF
+```
+
+---
+
+
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
