@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+<link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/YOURMATADOR/GraficosPorComputadora1/master/docs/public/img/favicon.ico?">
+
 
   _Jesus Eduardo Avila Mancilla_
 
@@ -230,7 +232,7 @@ C0C0C0 = gris claro
 858585 = gris obscuro
 El archivo deberá formarse de la siguiente manera:
 ```
-![ejemplo](https://raw.githubusercontent.com/YOURMATADOR/GraficosPorComputadora1/master/docs/public/img/a13.png)
+![ejemplo](https://raw.githubusercontent.com/YOURMATADOR/GraficosPorComputadora1/master/docs/public/img/arreglo.png)
 [# 2](/colores/num2.html)
 
 ---
@@ -245,8 +247,8 @@ modo de color indexado utilizando la paleta siguiente: (use valores hexadecimale
 ```
 
 ![ejemplo](https://raw.githubusercontent.com/YOURMATADOR/GraficosPorComputadora1/master/docs/public/img/mario.png)
-[UDG](/unidad2/arreglo.html)
-(/colores/num3.html)
+[UDG](/colores/num3.html)
+
 
 ---
 
