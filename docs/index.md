@@ -2,6 +2,14 @@
 layout: default
 ---
 <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/YOURMATADOR/GraficosPorComputadora1/master/docs/public/img/favicon.ico?">
+<script>window.onload = function() {
+  var link = top.document.createElement("link");
+  link.type = "image/x-icon";
+  link.rel = "shortcut icon";
+  link.href = "https://raw.githubusercontent.com/YOURMATADOR/GraficosPorComputadora1/master/docs/public/img/favicon.ico";
+  top.document.getElementsByTagName("head")[0].appendChild(link);
+} </script>
+
 
 
   _Jesus Eduardo Avila Mancilla_
@@ -129,7 +137,7 @@ unidades a la derecha y dos hacia arriba. Rote
 la figura resultante 30 grados antihorario
 tomando como centro de rotación el origen.
 ```
-[Tranformaciones](/unidad2/transformaciones.html)
+### [Tranformaciones](/unidad2/transformaciones.html)
 
 ---
 ## Circulos
@@ -147,7 +155,7 @@ para indicar el color del círculo.
 Agregue también una caja de
 texto donde pueda especificar el radio del mismo.
 ```
-[Circulos](/unidad2/circulos.html)
+### [Circulos](/unidad2/circulos.html)
 
 ---
 
@@ -162,7 +170,7 @@ utiliza un lienzo de 400x400 pixeles. Modifique los archivos
 pixeles.html y pixeles.js para que todos los pixeles del lienzo se
 iluminen con un color al azar.
 ```
-[Colores](/unidad2/colores.html)
+### [Colores](/unidad2/colores.html)
 
 ---
 ## Dibujar 
@@ -176,7 +184,7 @@ archivos pixelclic.html y pixelclic.js para que se permita
 especificar al usuario el color del punto a graficar. No incluya un
 botón, sólo el selector con la paleta de colores html.
 ```
-[Dibujar](/unidad2/dibujo.html)
+### [Dibujar](/unidad2/dibujo.html)
 
 ---
 ## Dibujar Linea 
@@ -196,7 +204,7 @@ dentro de la función lineaEcuacionRecta() si el inicial está a la
 derecha del final. Lo anterior, antes de iniciar con el cálculo de los
 puntos medios.
 ```
-[Linea colores](/unidad2/lineaColores.html)
+### [Linea colores](/unidad2/lineaColores.html)
 
 ---
 ## Practica 1 | modos de color (imprimir UDG)
@@ -211,7 +219,7 @@ imagen que resulta de procesar la siguiente información:
 0001100000000100101001001001100011000100101001101001000010100100101001011001
 100010100100010001001001110011000111
 ```
-[# 1](/colores/num1.html)
+### [# 1](/colores/num1.html)
 
 ---
 ## Practica 2 | modos de color (Matris)
@@ -233,7 +241,7 @@ C0C0C0 = gris claro
 El archivo deberá formarse de la siguiente manera:
 ```
 ![ejemplo](https://raw.githubusercontent.com/YOURMATADOR/GraficosPorComputadora1/master/docs/public/img/arreglo.png)
-[# 2](/colores/num2.html)
+### [# 2](/colores/num2.html)
 
 ---
 ## Practica 3 | modos de color (mario)
@@ -247,7 +255,7 @@ modo de color indexado utilizando la paleta siguiente: (use valores hexadecimale
 ```
 
 ![ejemplo](https://raw.githubusercontent.com/YOURMATADOR/GraficosPorComputadora1/master/docs/public/img/mario.png)
-[UDG](/colores/num3.html)
+### [UDG](/colores/num3.html)
 
 
 ---
@@ -266,7 +274,33 @@ var mario = "FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FF0000 FF0000 FF0000 FF00
 ```
 
 ---
+# Unidad 3
+---
+## Filtros
 
+_Descripcion del problema_ :pencil2:
+
+```
+Agregar multiples filtros a una imagen original y devolver la imagen con el filtro aplicado
+```
+### [Filtros de camara](/unidad3/index.html)
+
+---
+## concolucion
+
+_Descripcion del problema_ :pencil2:
+
+```
+Agregar el brillo de brillo a una imagen
+
+La operación debe aplicarse sobre cada uno de los canales RGB en imágenes a color, por
+lo que para agilizar el proceso se puede aplicar sobre una imagen en escala de grises,
+evitando hacer tres veces el proceso (El código de color de un tono de gris tiene la misma
+intensidad en sus canales RGB)
+```
+### [Convolucion](/convolucion/convolucion.html)
+
+---
 
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
