@@ -302,5 +302,16 @@ intensidad en sus canales RGB)
 
 ---
 
+# Unidad 4
+---
+## Filtros con camara en vivo
+
+_Descripcion del problema_ :pencil2:
+
+```
+Agregar multiples filtros a una imagen original y devolver la imagen con el filtro aplicado
+```
+### [Filtros de camara](/unidad4/filtros/index.html)
+
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>

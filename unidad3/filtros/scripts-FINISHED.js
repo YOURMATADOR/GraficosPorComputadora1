@@ -8,6 +8,10 @@ const EscalaGrises = document.getElementById("filtroEscalaGrises");
 const desRGB = document.getElementById("filtroRGB");
 const blancoNegro = document.getElementById("blancoNegro");
 const rojos = document.getElementById("filtroRojo");
+const azules = document.getElementById("filtroAzul");
+const amarillos = document.getElementById("filtroAmarillo");
+const sepias = document.getElementById("filtroSepia");
+const inversos = document.getElementById("filtroInverso");
 
 let filtro = redEffect;
 let pixels = 0;
@@ -16,6 +20,10 @@ EscalaGrises.addEventListener("click", () => (filtro = aplicarEscalaGrises));
 desRGB.addEventListener("click", () => (filtro = rgbSplit));
 blancoNegro.addEventListener("click", () => (filtro = bNegro));
 rojos.addEventListener("click", () => (filtro = redEffect));
+azules.addEventListener("click", () => (filtro = blueScale));
+amarillos.addEventListener("click", () => (filtro = yellowScale));
+sepias.addEventListener("click", () => (filtro = sepia));
+inversos.addEventListener("click", () => (filtro = inverse));
 
 function getVideo() {
   navigator.mediaDevices
@@ -75,6 +83,27 @@ const vuelta = (valor, suma) => {
   }
   return valor;
 };
+var inverse = function inverse(imageData) {
+  var data = imageData.data;
+  for (var i = 0; i < data.length; i += 4) {
+    data[i] = 255 - data[i];
+    data[i + 1] = 255 - data[i + 1];
+    data[i + 2] = 255 - data[i + 2];
+  }
+  return imageData;
+};
+var sepia = function sepia(imageData) {
+  var data = imageData.data;
+  for (var i = 0; i < data.length; i += 4) {
+    var red = data[i];
+    var green = data[i + 1];
+    var blue = data[i + 2];
+    data[i] = (red * 0.393) + (green * 0.769) + (blue * 0.189);
+    data[i + 1] = (red * 0.349) + (green * 0.686) + (blue * 0.168);
+    data[i + 2] = (red * 0.272) + (green * 0.534) + (blue * 0.131);
+  }
+  return imageData;
+};
 function aplicarBrillo(pixels) {
   const brillo = document.getElementById("brillo").value;
   const tam = pixels.width * pixels.height;
@@ -111,6 +140,18 @@ function aplicarEscalaGrises(pixels) {
   }
   return pixels;
 }
+var yellowScale = function yellowScale(imageData) {
+  var data = imageData.data;
+  for (var i = 0; i < data.length; i += 4) {
+    var red = data[i];
+    var green = data[i + 1];
+    var blue = data[i + 2];
+    var average = (red + green + blue) / 3;
+    data[i] = data[i + 1] = average;
+    data[i + 2] = 0;
+  }
+  return imageData;
+};
 function bNegro(pixels) {
   const tam = pixels.width * pixels.height;
   for (let i = 0; i < tam; i++) {
@@ -134,6 +175,18 @@ function redEffect(pixels) {
   return pixels;
 }
 
+var blueScale = function blueScale(imageData) {
+  var data = imageData.data;
+  for (var i = 0; i < data.length; i += 4) {
+    var red = data[i];
+    var green = data[i + 1];
+    var blue = data[i + 2];
+    var average = (red + green + blue) / 3;
+    data[i + 2] = average;
+    data[i] = data[i + 1] = 0;
+  }
+  return imageData;
+};
 function rgbSplit(pixels) {
   for (let i = 0; i < pixels.data.length; i += 4) {
     pixels.data[i - 150] = pixels.data[i + 0]; // RED
