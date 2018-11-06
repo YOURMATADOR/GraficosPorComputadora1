@@ -204,7 +204,7 @@ dentro de la función lineaEcuacionRecta() si el inicial está a la
 derecha del final. Lo anterior, antes de iniciar con el cálculo de los
 puntos medios.
 ```
-### [Linea colores](/unidad2/lineaColores.html)
+### [Linea colores](/unidad2/lineasColores.html)
 
 ---
 ## Practica 1 | modos de color (imprimir UDG)
