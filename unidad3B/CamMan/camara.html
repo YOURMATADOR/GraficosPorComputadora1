@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Filtrado de video</title>
+    <script type="text/javascript" src="CamMan.js"></script>
+  </head>
+  <body>
+    <div id="salida"></div>
+   <div id="salida2"></div>
+    <script type="text/javascript">
+
+      var camMan = new CamMan({ container: 'salida' });
+      camMan.start();
+      camMan.on('start', function(){
+        camMan.getCanvas({ container: 'salida2', onFrame: filtro(copia) });
+      });
+
+      
+
+
+      var filtro = function filtrar(f) {
+        return function (lienzo) {
+          var contexto = lienzo.getContext('2d');
+          var datosImg = contexto.getImageData(0, 0, lienzo.width, lienzo.height);
+          datosImg = f(datosImg);
+          contexto.putImageData(datosImg, 0, 0);
+        };
+      };
+
+      var copia = function copia(datosI) {
+        var datos = datosI.data;
+        for (var i = 0; i < datos.length; i += 4) {
+          datos[i+0]=datos[i+0];
+          datos[i+1]=datos[i+1];
+          datos[i+2]=datos[i+2];
+          datos[i+3]=datos[i+3];
+        }
+        return datosI;
+      };
+
+    </script>
+  </body>
+</html>
